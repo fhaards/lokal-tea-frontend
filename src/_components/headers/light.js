@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
-import logo from "../../_images/app_img/lokaltea2_logo_white.svg";
+import logoDark from "../../_images/app_img/lokaltea3_logo.svg";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 
@@ -12,25 +12,21 @@ const Header = tw.header`
   flex justify-between items-center
   max-w-screen-xl mx-auto
 `;
-
 export const NavLinks = tw.div`inline-block`;
 export const NavLink = tw.a`
   text-lg py-3 lg:py-2 lg:text-sm lg:ml-10 lg:my-0 border-t lg:border-0 sm:border-0
   font-semibold tracking-wide transition duration-300 hocus:text-primary-500
 `;
-
 export const PrimaryLink = tw(NavLink)`
   lg:mx-0 px-8 py-3 rounded text-gray-100
   hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline border-0 border-t-0 border-b-0
 `;
-
 export const LogoLink = styled(NavLink)`
   ${tw`flex items-center font-black border-0 border-t-0 border-b-0 text-2xl! ml-0!`};
   img {
     ${tw`h-10 mr-3`}
   }
 `;
-
 export const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between relative`;
 export const NavToggle = tw.button`
   lg:hidden z-20 focus:outline-none hocus:text-primary-500 transition duration-300
@@ -41,19 +37,34 @@ export const MobileNavLinks = motion(styled.div`
     ${tw`flex flex-col mx-5`}
   }
 `);
-
 export const DesktopNavLinks = tw.nav`
   hidden lg:flex flex-1 justify-between items-center
 `;
+
 const OpacityCloseBtn = tw.div`z-10 absolute inset-0 bg-black opacity-75`;
 
 export default ({
   roundedHeaderButton = false,
+  isScroll,
   logoLink,
   links,
   className,
   collapseBreakpointClass = "lg",
 }) => {
+  /** Scrolling Effects */
+  const defaultLogo = logoLink;
+  const [usedLogo, setUsedLogo] = useState(defaultLogo);
+  useEffect(() => {
+    const changeLogo = async () => {
+      if (isScroll) {
+        setUsedLogo(defaultLogo);
+        return;
+      }
+      setUsedLogo(logoDark);
+    };
+    changeLogo();
+  }, [isScroll]);
+
   const defaultLinks = [
     <NavLinks key={1}>
       <NavLink href="/#">About</NavLink>
@@ -73,17 +84,11 @@ export default ({
   const collapseBreakpointCss =
     collapseBreakPointCssMap[collapseBreakpointClass];
 
-  const defaultLogoLink = (
-    <LogoLink href="/">
-      <img src={logo} alt="logo" height="200" />
-    </LogoLink>
-  );
-
   const SetCloseIcon = tw.div`fixed bottom-0 left-0 w-full h-6/12 flex items-center justify-center`;
 
-  logoLink = logoLink || defaultLogoLink;
-  links = links || defaultLinks;
+  // logoLink = isUpper ? defaultLogoLink : collapseLogoLink;
 
+  links = links || defaultLinks;
   return (
     <Header className={className || "header-light"}>
       <DesktopNavLinks
@@ -91,14 +96,18 @@ export default ({
         animate={animation}
         css={collapseBreakpointCss.desktopNavLinks}
       >
-        {logoLink}
+        <LogoLink href="/">
+          <img src={usedLogo} alt="logo" height="200" />
+        </LogoLink>
         {links}
       </DesktopNavLinks>
 
       <MobileNavLinksContainer
         css={collapseBreakpointCss.mobileNavLinksContainer}
       >
-        {logoLink}
+        <LogoLink href="/">
+          <img src={usedLogo} alt="logo" height="200" />
+        </LogoLink>
         <MobileNavLinks
           initial={{ x: "150%", display: "none" }}
           animate={animation}

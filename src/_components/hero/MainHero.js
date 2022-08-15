@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import logoCollapse from "../../_images/app_img/lokaltea_logo.svg";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import logo from "../../_images/app_img/lokaltea3_white.svg";
 
 import Header, {
   NavLink,
@@ -12,6 +12,8 @@ import Header, {
   NavToggle,
   DesktopNavLinks,
 } from "../headers/light.js";
+
+import { useScrollable } from "_components/headers/useScrollable.js";
 
 const PrimaryLink = tw(PrimaryLinkBase)`rounded-full`;
 const Container = styled.div`
@@ -37,27 +39,11 @@ const SubHeading = styled.h3`
 `;
 
 export default () => {
-  /** Scrolling Effects */
-  const [offset, setOffset] = useState(0);
-  const [isUpper, setIsUpper] = useState(true);
-  const handleScroll = () => setOffset(window.pageYOffset);
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  useEffect(() => {
-    if (offset > 500) {
-      setIsUpper(false);
-    } else {
-      setIsUpper(true);
-    }
-  }, [offset]);
+  const { isScroll } = useScrollable();
 
   /**  Animated when scroll */
   const MainHeader = styled.div`
-    ${isUpper
+    ${isScroll
       ? tw`h-3/12 flex justify-between mx-auto w-full transition duration-300 ease-in-out`
       : tw`fixed left-0 top-0 h-20 bg-white w-full mx-auto border-b transition duration-300 ease-in-out`}
   `;
@@ -66,35 +52,22 @@ export default () => {
   const StyledHeader = styled(Header)`
     ${tw`w-full max-w-screen-xl flex items-center h-full mx-auto px-6 sm:px-0`}
     ${DesktopNavLinks} ${NavLink} {
-      ${isUpper
+      ${isScroll
         ? tw`text-gray-100 hover:text-primary-500`
         : tw`text-gray-800 hover:text-primary-500`}
     }
     ${LogoLink} {
-      ${isUpper ? tw`` : tw`bg-gray-800 px-3 py-2 rounded-br-2xl rounded-tl-xl`}
     }
     ${NavToggle}.closed {
-      ${isUpper
+      ${isScroll
         ? tw`text-gray-100 hover:text-primary-500`
         : tw`text-gray-800 hover:text-primary-500`}
-    }
-  `;
-
-  /** Changed Logo when Scroll (:In Mobile) */
-  const CollapsingLogo = styled.div`
-    ${tw`lg:hidden py-3 text-2xl!`};
-    img {
-      ${tw`h-10 mr-3`}
     }
   `;
 
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="#">
-        <CollapsingLogo href="/">
-          <img src={logoCollapse} alt="logo" height="200" />
-        </CollapsingLogo>
-      </NavLink>
+      <NavLink href="#"></NavLink>
       <NavLink href="#">Home</NavLink>
       <NavLink href="#">About</NavLink>
       <NavLink href="#">Menu</NavLink>
@@ -107,7 +80,7 @@ export default () => {
       <OpacityOverlay />
       <HeroContainer>
         <MainHeader>
-          <StyledHeader links={navLinks} />
+          <StyledHeader logoLink={logo} isScroll={isScroll} links={navLinks} />
         </MainHeader>
         <Content>
           <Heading>
