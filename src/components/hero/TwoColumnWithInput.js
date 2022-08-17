@@ -3,12 +3,10 @@ import styled from "styled-components";
 import tw from "twin.macro";
 //eslint-disable-next-line
 import { css } from "styled-components/macro";
-
 import Header from "../headers/light.js";
-
-import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
-import DesignIllustration from "../../images/design-illustration-2.svg";
-import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../images/other/svg-decorator-blob-1.svg";
+import DesignIllustration from "../../images/illustration/design-illustration-2.svg";
+import CustomersLogoStripImage from "../../images/other/customers-logo-strip.png";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -53,11 +51,12 @@ export default ({ roundedHeaderButton }) => {
         <TwoColumn>
           <LeftColumn>
             <Heading>
-              Beautiful React Templates <span tw="text-primary-500">for you.</span>
+              Beautiful React Templates{" "}
+              <span tw="text-primary-500">for you.</span>
             </Heading>
             <Paragraph>
-              Our templates are easy to setup, understand and customize. Fully modular components with a variety of
-              pages and components.
+              Our templates are easy to setup, understand and customize. Fully
+              modular components with a variety of pages and components.
             </Paragraph>
             <Actions>
               <input type="text" placeholder="Your E-mail Address" />
@@ -70,7 +69,11 @@ export default ({ roundedHeaderButton }) => {
           </LeftColumn>
           <RightColumn>
             <IllustrationContainer>
-              <img tw="min-w-0 w-full max-w-lg xl:max-w-3xl" src={DesignIllustration} alt="Design Illustration" />
+              <img
+                tw="min-w-0 w-full max-w-lg xl:max-w-3xl"
+                src={DesignIllustration}
+                alt="Design Illustration"
+              />
             </IllustrationContainer>
           </RightColumn>
         </TwoColumn>

@@ -8,11 +8,11 @@ import {
 } from "components/misc/Headings.js";
 import { SectionDescription } from "components/misc/Typography.js";
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
-import { ReactComponent as ArrowRightIcon } from "images/arrow-right-icon.svg";
-import SupportIconImage from "images/support-icon.svg";
-import ShieldIconImage from "images/shield-icon.svg";
-import CustomizeIconImage from "images/customize-icon.svg";
-import { ReactComponent as SvgDecoratorBlob3 } from "images/svg-decorator-blob-3.svg";
+import { ReactComponent as ArrowRightIcon } from "images/icon/misc/arrow-right-icon.svg";
+import SupportIconImage from "images/icon/misc/support-icon.svg";
+import ShieldIconImage from "images/icon/misc/shield-icon.svg";
+import CustomizeIconImage from "images/icon/misc/customize-icon.svg";
+import { ReactComponent as SvgDecoratorBlob3 } from "images/other/svg-decorator-blob-3.svg";
 
 const Heading = tw(SectionHeading)``;
 const Subheading = tw(SubheadingBase)`text-center mb-3`;
@@ -25,9 +25,9 @@ const Column = styled.div`
 `;
 
 const Card = styled.a`
-  ${tw`flex flex-col items-center text-center h-full mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 `}
+  ${tw`flex flex-col items-center text-center h-full mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 rounded-lg bg-gray-100 `}
   .imageContainer {
-    ${tw`text-center rounded-full p-4 bg-gray-100`}
+    ${tw`text-center rounded-full p-4 bg-primary-500`}
     img {
       ${tw`w-8 h-8`}
     }
@@ -82,13 +82,6 @@ export default ({
   imageContainerCss = null,
   imageCss = null,
 }) => {
-  /*
-   * This componets accepts a prop - `cards` which is an array of object denoting the cards. Each object in the cards array can have the following keys (Change it according to your need, you can also add more objects to have more cards in this feature component):
-   *  1) imageSrc - the image shown at the top of the card
-   *  2) title - the title of the card
-   *  3) description - the description of the card
-   *  4) url - the url that the card should goto on click
-   */
   return (
     <Container>
       <ContentWithPaddingXl>

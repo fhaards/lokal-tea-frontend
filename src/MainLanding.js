@@ -2,25 +2,22 @@ import React from "react";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import Hero from "./_components/hero/MainHero.js";
+import Hero from "./components/hero/MainHero.js";
 import Features from "./components/features/ThreeColSimple.js";
 import MainFeature from "./components/features/TwoColWithButton.js";
-import MainFeature2 from "./components/features/TwoColSingleFeatureWithStats2.js";
+import MainFeature2 from "./components/features/SingleColWithSteps.js";
 import TabGrid from "./components/cards/TabCardGrid.js";
 import Testimonial from "./components/testimonials/ThreeColumnWithProfileImage.js";
 import Footer from "./components/footers/FiveColumnWithInputForm.js";
-
-import chefIconImageSrc from "images/chef-icon.svg";
-import celebrationIconImageSrc from "images/celebration-icon.svg";
-import shopIconImageSrc from "images/shop-icon.svg";
+import chefIconImageSrc from "images/icon/misc/chef-icon.svg";
+import celebrationIconImageSrc from "images/icon/misc/celebration-icon.svg";
+import shopIconImageSrc from "images/icon/misc/shop-icon.svg";
 
 /** Setup Background */
-import imgAbout from "./_images/_dummy/background/bg_hero_2.jpg";
-
+import imgAbout from "images/_dummy/background/bg_hero_2.jpg";
 export default () => {
   const Subheading = tw.span`tracking-wider text-sm font-medium`;
   const HighlightedText = tw.span`text-primary-500 inline-block font-light`;
-  const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block font-mono`;
   const Description = tw.span`inline-block mt-8 `;
   const imageCss = tw`rounded-tl-full rounded-br-full`;
 
@@ -63,7 +60,7 @@ export default () => {
         imageSrc={imgAbout}
         imageCss={imageCss}
         imageDecoratorBlob={true}
-        imageDecoratorBlobCss={tw`left-1/2 -translate-x-1/2 md:w-32 md:h-32 opacity-25`}
+        imageDecoratorBlobCss={tw`right-1/2 -translate-x-1/2 md:w-64 md:h-64 opacity-25`}
       />
 
       {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
@@ -84,7 +81,7 @@ export default () => {
         cards={[
           {
             imageSrc: shopIconImageSrc,
-            title: "230+ Locations",
+            title: "100+ Locations",
             description: "Lorem ipsum donor amet siti ceali placeholder text",
             url: "https://google.com",
           },
@@ -105,34 +102,42 @@ export default () => {
         imageCss={tw`w-20! h-20! `}
       />
       <MainFeature2
-        subheading={<Subheading>A Reputed Brand</Subheading>}
+        subheading={<Subheading>Timeline Preparation</Subheading>}
         heading={
           <>
-            Why <HighlightedText>Choose Us ?</HighlightedText>
+            #open<HighlightedText>new franchise </HighlightedText>
           </>
         }
-        statistics={[
+        steps={[
           {
-            key: "Orders",
-            value: "94000+",
+            heading: "Commitment",
+            description: "Making deal with commitment",
           },
           {
-            key: "Customers",
-            value: "11000+",
+            heading: "Location Survey",
+            description: "We help to get the best location",
           },
           {
-            key: "Chefs",
-            value: "1500+",
+            heading: "Designing",
+            description: "Design youre stroe",
+          },
+          {
+            heading: "Repayment",
+            description: "Payment Fee",
+          },
+          {
+            heading: "Equipment & Materials",
+            description: "Send Equipment & Raw Materials to new store",
+          },
+          {
+            heading: "Employee Training",
+            description: "Training new Employee",
+          },
+          {
+            heading: "Opening Store",
+            description: "Good Luck :)",
           },
         ]}
-        primaryButtonText="Order Now"
-        primaryButtonUrl="https://order.now.com"
-        imageInsideDiv={false}
-        imageSrc="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEzNzI2fQ&auto=format&fit=crop&w=768&q=80"
-        imageCss={Object.assign(tw`bg-cover`, imageCss)}
-        imageContainerCss={tw`md:w-1/2 h-auto`}
-        imageDecoratorBlob={true}
-        imageDecoratorBlobCss={tw`left-1/2 md:w-32 md:h-32 -translate-x-1/2 opacity-25`}
         textOnLeft={true}
       />
       <Testimonial

@@ -6,9 +6,9 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { SectionHeading } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import { ReactComponent as StarIcon } from "images/star-icon.svg";
-import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
+import { ReactComponent as StarIcon } from "images/icon/misc/star-icon.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "images/other/svg-decorator-blob-5.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "images/other/svg-decorator-blob-7.svg";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col gap-5`;
 const Header = tw(SectionHeading)``;
@@ -17,9 +17,9 @@ const TabsControl = tw.div`flex flex-wrap max-w-screen-xl bg-transparent w-full 
 const TabControl = styled.div`
   ${tw`border border-transparent cursor-pointer px-6 py-3 mt-2 sm:mt-0 sm:mr-2 last:mr-0 
   text-gray-600 font-medium rounded-sm transition duration-300 text-sm sm:text-base 
-  w-1/4 sm:w-1/2 sm:w-auto text-center`}
+  w-1/4 sm:w-1/2 sm:w-auto text-center rounded-br-3xl! rounded-tl-3xl!`}
   &:hover {
-    ${tw`border border-transparent text-primary-300`}
+    ${tw`border! border-primary-500! bg-primary-500! text-white! rounded-br-3xl! rounded-tl-3xl!`}
   }
   ${(props) =>
     props.active &&
