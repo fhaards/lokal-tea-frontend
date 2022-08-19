@@ -2,7 +2,7 @@ import React from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import Header from "components/headers/light.js";
+import Header from "components/headers/Navbar";
 import Footer from "components/footers/FiveColumnWithInputForm.js";
 import ContactUsForm from "components/forms/TwoColContactUsWithIllustrationFullForm.js";
 import ContactDetails from "components/cards/ThreeColContactDetails.js";
@@ -11,6 +11,10 @@ const Address = tw.span`leading-relaxed`;
 const AddressLine = tw.span`block`;
 const Email = tw.span`text-sm mt-6 block text-gray-500`;
 const Phone = tw.span`text-sm mt-0 block text-gray-500`;
+const Subheading = tw.span`tracking-wider text-sm font-medium text-gray-300`;
+const HighlightedText = tw.span`text-primary-500 inline-block font-light`;
+const DescriptionText = tw.span`text-gray-600 text-right`;
+const imageCss = tw`rounded-tl-full rounded-br-full bg-red-500`;
 
 export default () => {
   return (
@@ -30,7 +34,7 @@ export default () => {
                 <Email>contact@treact.com</Email>
                 <Phone>+1 (203) 991-6988</Phone>
               </>
-            )
+            ),
           },
           {
             title: "Illinois",
@@ -43,7 +47,7 @@ export default () => {
                 <Email>contact@treact.com</Email>
                 <Phone>+1 (203) 991-6988</Phone>
               </>
-            )
+            ),
           },
           {
             title: "California",
@@ -56,7 +60,7 @@ export default () => {
                 <Email>contact@treact.com</Email>
                 <Phone>+1 (203) 991-6988</Phone>
               </>
-            )
+            ),
           },
           {
             title: "Tennessee",
@@ -69,7 +73,7 @@ export default () => {
                 <Email>contact@treact.com</Email>
                 <Phone>+1 (203) 991-6988</Phone>
               </>
-            )
+            ),
           },
           {
             title: "New Jersey",
@@ -82,7 +86,7 @@ export default () => {
                 <Email>contact@treact.com</Email>
                 <Phone>+1 (203) 991-6988</Phone>
               </>
-            )
+            ),
           },
           {
             title: "Ohio",
@@ -95,8 +99,8 @@ export default () => {
                 <Email>contact@treact.com</Email>
                 <Phone>+1 (203) 991-6988</Phone>
               </>
-            )
-          }
+            ),
+          },
         ]}
       />
       <Footer />

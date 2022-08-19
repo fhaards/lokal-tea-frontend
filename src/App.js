@@ -13,6 +13,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import MainLanding from "MainLanding";
 // import ThankYouPage from "ThankYouPage.js";
 import AboutUsPage from "pages/AboutUs";
+import ContactUsPage from "pages/ContactUs";
 import MenuListPage from "pages/MenuList";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -32,6 +33,9 @@ export default function App() {
         <Route path="/thank-you">
           <ThankYouPage />
         </Route> */}
+        <Route path="/contact-us">
+          <ContactUsPage />
+        </Route>
         <Route path="/about-us">
           <AboutUsPage />
         </Route>

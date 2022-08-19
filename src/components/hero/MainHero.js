@@ -67,10 +67,10 @@ export default () => {
   const navLinks = [
     <NavLinks key={1}>
       <NavLink href="/"></NavLink>
-      <NavLink href="#">Home</NavLink>
+      <NavLink href="/">Home</NavLink>
       <NavLink href="/about-us">About</NavLink>
       <NavLink href="/menu-list">Menu</NavLink>
-      <NavLink href="#">Contact</NavLink>
+      <NavLink href="/contact-us">Contact</NavLink>
     </NavLinks>,
   ];
 

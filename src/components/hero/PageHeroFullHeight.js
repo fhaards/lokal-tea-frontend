@@ -67,7 +67,7 @@ export default ({ heading, subHeading, description, backgroundSrc }) => {
       <NavLink href="/">Home</NavLink>
       <NavLink href="/about-us">About</NavLink>
       <NavLink href="/menu-list">Menu</NavLink>
-      <NavLink href="#">Contact</NavLink>
+      <NavLink href="/contact-us">Contact</NavLink>
     </NavLinks>,
   ];
 

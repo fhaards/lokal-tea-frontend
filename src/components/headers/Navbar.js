@@ -8,11 +8,8 @@ import logoLight from "../../images/app_img/lokaltea_logo_white.svg";
 import logoDark from "../../images/app_img/lokaltea_logo.svg";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+import { useScrollable } from "components/headers/useScrollable.js";
 
-const Header = tw.header`
-  flex justify-between items-center
-  max-w-screen-xl mx-auto
-`;
 export const NavLinks = tw.div`inline-block`;
 export const NavLink = tw.a`
   text-lg py-3 lg:py-2 lg:text-sm lg:ml-10 lg:my-0 border-t lg:border-0 sm:border-0
@@ -46,25 +43,33 @@ const OpacityCloseBtn = tw.div`z-10 absolute inset-0 bg-black opacity-75`;
 
 export default ({
   roundedHeaderButton = false,
-  isScroll,
-  logoLink,
   links,
   className,
   collapseBreakpointClass = "lg",
 }) => {
   /** Scrolling Effects */
+
+  const { isScroll } = useScrollable();
+
+  const Header = styled.header`
+    ${isScroll
+      ? tw`h-3/12 flex justify-between mx-auto w-full transition delay-300 duration-300 ease-in-out`
+      : tw`z-20 fixed flex justify-between mx-auto w-full bg-gray-100 left-0 top-0 h-20  w-full mx-auto border-b transition delay-300 duration-300 ease-in-out`}
+  `;
+
+  const StyledHeader = styled.header`
+    ${tw`w-full max-w-screen-xl flex items-center h-full mx-auto px-6 sm:px-0`}
+    ${DesktopNavLinks} ${NavLink} {
+      ${tw`text-gray-600 hover:text-primary-500`}
+    }
+  `;
+
   const defaultLinks = [
     <NavLinks key={1}>
       <NavLink href="/">Home</NavLink>
       <NavLink href="/about-us">About</NavLink>
       <NavLink href="/menu-list">Menu</NavLink>
       <NavLink href="/contact-us">Contact</NavLink>
-      <NavLink href="/#" tw="lg:ml-12!">
-        Login
-      </NavLink>
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/#">
-        Sign Up
-      </PrimaryLink>
     </NavLinks>,
   ];
 
@@ -78,49 +83,55 @@ export default ({
 
   links = links || defaultLinks;
   return (
-    <Header className={className || "header-light"}>
-      <DesktopNavLinks
-        initial={{ x: "150%", display: "none" }}
-        animate={animation}
-        css={collapseBreakpointCss.desktopNavLinks}
-      >
-        <LogoLink href="/">
-          <img src={isScroll ? logoLight : logoDark} alt="logo" height="200" />
-        </LogoLink>
-        {links}
-      </DesktopNavLinks>
-
-      <MobileNavLinksContainer
-        css={collapseBreakpointCss.mobileNavLinksContainer}
-      >
-        <LogoLink href="/">
-          <img src={isScroll ? logoLight : logoDark} alt="logo" height="200" />
-        </LogoLink>
-        <MobileNavLinks
+    <Header className={className || "header-light"} isScroll={isScroll}>
+      <StyledHeader>
+        <DesktopNavLinks
           initial={{ x: "150%", display: "none" }}
           animate={animation}
-          css={collapseBreakpointCss.mobileNavLinks}
+          css={collapseBreakpointCss.desktopNavLinks}
         >
+          <LogoLink href="/">
+            <img src={logoDark} alt="logo" height="200" />
+          </LogoLink>
           {links}
-        </MobileNavLinks>
-        <NavToggle
-          onClick={toggleNavbar}
-          className={showNavLinks ? "open" : "closed"}
+        </DesktopNavLinks>
+
+        <MobileNavLinksContainer
+          css={collapseBreakpointCss.mobileNavLinksContainer}
         >
-          {showNavLinks ? (
-            <SetCloseIcon>
-              <OpacityCloseBtn />
-              <CloseIcon
-                initial={{ x: "150%", display: "none" }}
-                animate={animation}
-                tw="z-20 w-20 h-20 bg-gray-100 rounded-full p-2 place-items-center "
-              />
-            </SetCloseIcon>
-          ) : (
-            <MenuIcon tw="w-6 h-6" />
-          )}
-        </NavToggle>
-      </MobileNavLinksContainer>
+          <LogoLink href="/">
+            <img
+              src={isScroll ? logoLight : logoDark}
+              alt="logo"
+              height="200"
+            />
+          </LogoLink>
+          <MobileNavLinks
+            initial={{ x: "150%", display: "none" }}
+            animate={animation}
+            css={collapseBreakpointCss.mobileNavLinks}
+          >
+            {links}
+          </MobileNavLinks>
+          <NavToggle
+            onClick={toggleNavbar}
+            className={showNavLinks ? "open" : "closed"}
+          >
+            {showNavLinks ? (
+              <SetCloseIcon>
+                <OpacityCloseBtn />
+                <CloseIcon
+                  initial={{ x: "150%", display: "none" }}
+                  animate={animation}
+                  tw="z-20 w-20 h-20 bg-gray-100 rounded-full p-2 place-items-center "
+                />
+              </SetCloseIcon>
+            ) : (
+              <MenuIcon tw="w-6 h-6" />
+            )}
+          </NavToggle>
+        </MobileNavLinksContainer>
+      </StyledHeader>
     </Header>
   );
 };
