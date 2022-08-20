@@ -266,6 +266,8 @@ module.exports = {
     },
     fontFamily: {
       display: ["Inter", "system-ui"],
+      libre: ["Libre Baskerville", "serif"],
+      quicksand: ["Quicksand", "sans-serif"],
       sans: [
         "system-ui",
         "-apple-system",

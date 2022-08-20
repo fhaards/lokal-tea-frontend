@@ -10,7 +10,7 @@ import Header, {
   LogoLink,
   NavToggle,
   DesktopNavLinks,
-} from "../headers/light";
+} from "../headers/LightNavbar";
 
 import { useScrollable } from "components/headers/useScrollable.js";
 
@@ -24,14 +24,14 @@ const HeroContainer = tw.div`z-20 relative px-5 md:px-0 max-w-screen-xl mx-auto 
 const Content = tw.div`px-6 lg:px-0 flex flex-1 flex-col justify-center items-center`;
 
 const Heading = styled.h1`
-  ${tw`text-4xl sm:text-4xl lg:text-5xl xl:text-6xl uppercase font-medium tracking-widest text-gray-100 leading-snug -mt-24 sm:mt-0 max-w-2xl`}
+  ${tw`font-libre text-center text-4xl sm:text-4xl lg:text-5xl xl:text-6xl capitalize font-bold text-gray-100 leading-none -mt-24 sm:mt-0 max-w-2xl`}
   span {
     ${tw`inline-block mt-2 text-primary-500`}
   }
 `;
 
 const SubHeading = styled.h3`
-  ${tw`text-lg sm:text-sm lg:text-lg xl:text-xl tracking-widest text-gray-100 leading-snug sm:mt-3 mt-3`}
+  ${tw`font-quicksand text-lg sm:text-sm lg:text-lg xl:text-xl tracking-widest text-gray-100 leading-snug sm:mt-3 mt-3`}
   span {
     ${tw`text-red-700`}
   }
@@ -84,7 +84,7 @@ export default () => {
         </MainHeader>
         <Content>
           <Heading>
-            a <span>simple</span> cup of <span>tea</span> is far from a{" "}
+            a <span> simple</span> cup of <span>tea</span> is far from a{" "}
             <span>simple</span> matter
             <br />
             <br />

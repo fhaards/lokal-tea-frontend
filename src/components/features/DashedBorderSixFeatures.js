@@ -5,16 +5,15 @@ import tw from "twin.macro";
 import { css } from "styled-components/macro";
 import { SectionHeading } from "components/misc/Headings.js";
 
-import defaultCardImage from "../../images/shield-icon.svg";
+import defaultCardImage from "../../images/icon/misc/shield-icon.svg";
 
-import { ReactComponent as SvgDecoratorBlob3 } from "../../images/svg-decorator-blob-3.svg";
-
-import SupportIconImage from "../../images/support-icon.svg";
-import ShieldIconImage from "../../images/shield-icon.svg";
-import CustomizeIconImage from "../../images/customize-icon.svg";
-import FastIconImage from "../../images/fast-icon.svg";
-import ReliableIconImage from "../../images/reliable-icon.svg";
-import SimpleIconImage from "../../images/simple-icon.svg";
+import { ReactComponent as SvgDecoratorBlob3 } from "../../images/other/svg-decorator-blob-3.svg";
+import SupportIconImage from "../../images/icon/misc/support-icon.svg";
+import ShieldIconImage from "../../images/icon/misc/shield-icon.svg";
+import CustomizeIconImage from "../../images/icon/misc/customize-icon.svg";
+import FastIconImage from "../../images/icon/misc/fast-icon.svg";
+import ReliableIconImage from "../../images/icon/misc/reliable-icon.svg";
+import SimpleIconImage from "../../images/icon/misc/simple-icon.svg";
 
 const Container = tw.div`relative`;
 
@@ -66,19 +65,22 @@ export default () => {
     {
       imageSrc: ShieldIconImage,
       title: "Ads Management",
-      description: "We create and manage ads that you need, from creation to deployment. Lorem ipsum donor sit amet consicou."
+      description:
+        "We create and manage ads that you need, from creation to deployment. Lorem ipsum donor sit amet consicou.",
     },
     { imageSrc: SupportIconImage, title: "Video Marketing" },
     { imageSrc: CustomizeIconImage, title: "Customer Relation" },
     { imageSrc: ReliableIconImage, title: "Product Outreach" },
     { imageSrc: FastIconImage, title: "PR Campaign" },
-    { imageSrc: SimpleIconImage, title: "Product Expansion" }
+    { imageSrc: SimpleIconImage, title: "Product Expansion" },
   ];
 
   return (
     <Container>
       <ThreeColumnContainer>
-        <Heading>Our Professional <span tw="text-primary-500">Services</span></Heading>
+        <Heading>
+          Our Professional <span tw="text-primary-500">Services</span>
+        </Heading>
         {cards.map((card, i) => (
           <Column key={i}>
             <Card>
@@ -88,7 +90,8 @@ export default () => {
               <span className="textContainer">
                 <span className="title">{card.title || "Fully Secure"}</span>
                 <p className="description">
-                  {card.description || "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud. Sic Semper Tyrannis. Neoas Calie artel."}
+                  {card.description ||
+                    "Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud. Sic Semper Tyrannis. Neoas Calie artel."}
                 </p>
               </span>
             </Card>

@@ -2,23 +2,25 @@ import React from "react";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import Hero from "./components/hero/MainHero.js";
-import Features from "./components/features/ThreeColSimple.js";
+import Hero from "./components/hero/SingleColumnSimple";
+import Features from "./components/features/ThreeColSimple2";
 import MainFeature from "./components/features/TwoColWithButton.js";
 import MainFeature2 from "./components/features/SingleColWithSteps.js";
 import TabGrid from "./components/cards/TabCardGrid.js";
 import Testimonial from "./components/testimonials/ThreeColumnWithProfileImage.js";
 import Footer from "./components/footers/FiveColumnWithInputForm.js";
-import chefIconImageSrc from "images/icon/misc/chef-icon.svg";
-import celebrationIconImageSrc from "images/icon/misc/celebration-icon.svg";
-import shopIconImageSrc from "images/icon/misc/shop-icon.svg";
+import imageSrc from "images/_dummy/background/bg_hero.png";
+
+import TeaCustomIcon from "images/icon/misc/tea-custom.svg";
+import TeaQualityIcon from "images/icon/misc/tea-quality.svg";
+import TeaPartyIcon from "images/icon/misc/tea-party.svg";
 
 /** Setup Background */
 import imgAbout from "images/_dummy/square/square_about_home.png";
 export default () => {
-  const Subheading = tw.span`tracking-wider text-sm font-medium`;
-  const HighlightedText = tw.span`text-primary-500 inline-block font-light`;
-  const Description = tw.span`inline-block mt-8 `;
+  const Subheading = tw.span`text-sm font-quicksand`;
+  const HighlightedText = tw.span`text-primary-500 inline-block`;
+  const Description = tw.span`inline-block mt-8 font-quicksand`;
   const imageCss = tw``;
 
   return (
@@ -26,70 +28,104 @@ export default () => {
       <Hero
         heading={
           <>
-            Delicious & Affordable{" "}
-            <HighlightedText>Meals Near You.</HighlightedText>
+            a <span> simple</span> cup of <span>tea</span> is far from a{" "}
+            <span>simple</span> matter
+            <br />
+            <br />
           </>
         }
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        subHeading={
+          <>
+            <span>#indonesia</span> #autenthic #localtea
+          </>
+        }
         imageCss={imageCss}
+        imageSrc={imageSrc}
         imageDecoratorBlob={false}
         primaryButtonText="Order Now"
         watchVideoButtonText="Meet The Chefs"
       />
 
+      <Features
+        cards={[
+          {
+            imageSrc: TeaCustomIcon,
+            title: "Kustom Teh",
+            description:
+              "Kustom Teh sesuai imajinasi kamu dengan topping dan bahan bahan yang berbeda",
+          },
+          {
+            imageSrc: TeaQualityIcon,
+            title: "Kualitas",
+            description:
+              "Bahan bahan Lokal namun mengutamakan Kualitas yang terjamin",
+            url: "https://timerse.com",
+          },
+          {
+            imageSrc: TeaPartyIcon,
+            title: "Teman Pesta",
+            description: "Meriahkan dan Temani pestamu dengan teh dari kami",
+            url: "https://reddit.com",
+          },
+        ]}
+        imageContainerCss={tw`p-2!`}
+        imageCss={tw`w-20! h-20! `}
+      />
+
       <MainFeature2
-        subheading={<Subheading>Timeline Preparation</Subheading>}
+        subheading={<Subheading>Alur Persiapan</Subheading>}
         heading={
           <>
-            #open<HighlightedText>new franchise </HighlightedText>
+            #Buka <HighlightedText> Outlet </HighlightedText>
           </>
         }
         steps={[
           {
-            heading: "Commitment",
-            description: "Making deal with commitment",
+            heading: "Komitmen",
+            description: "Berkomitmen untuk yang terbaik",
           },
           {
-            heading: "Location Survey",
-            description: "We help to get the best location",
+            heading: "Survei Lokasi",
+            description: "Kita bantu menemukan tempat terbaik",
           },
           {
-            heading: "Designing",
-            description: "Design youre stroe",
+            heading: "Desain Pembangunan",
+            description: "Desain pembangunan untuk outlet baru",
           },
           {
-            heading: "Repayment",
-            description: "Payment Fee",
+            heading: "Pembayaran Ulang",
+            description: "Pelunasan untuk pembangunan outlet baru",
           },
           {
-            heading: "Equipment & Materials",
-            description: "Send Equipment & Raw Materials to new store",
+            heading: "Equipment & Bahan",
+            description: "Pengiriman equipment dan bahan untuk outlet baru",
           },
           {
-            heading: "Employee Training",
-            description: "Training new Employee",
+            heading: "Latihan Karyawan",
+            description: "Melatih Karyawan baru",
           },
           {
-            heading: "Opening Store",
-            description: "Good Luck :)",
+            heading: "Pembukaan Outlet",
+            description:
+              "Selamat, Outlet baru telah anda miliki. Semoga sukses :)",
           },
         ]}
         textOnLeft={true}
       />
 
       <MainFeature
-        subheading={<Subheading>Established Since 2022</Subheading>}
+        subheading={<Subheading>Didirikan 2022</Subheading>}
         heading={
           <>
-            We've
-            <wbr /> <HighlightedText>The local Tea.</HighlightedText>
+            Cerita <HighlightedText> Kami</HighlightedText>
           </>
         }
         description={
           <Description>
-            At whatever path of life you are in, tea can serve that purpose. We
-            truly believe that as you step with us, we can find you that
-            specific tea for your special moments ..
+            Di jalan kehidupan apa pun yang Anda jalani, teh dapat melayani
+            tujuan itu. Kami benar-benar percaya bahwa saat Anda melangkah
+            bersama kami, kami dapat menemukan teh khusus untuk momen spesial
+            Anda
             <br />
           </Description>
         }
@@ -109,45 +145,16 @@ export default () => {
       <TabGrid
         heading={
           <>
-            It's <HighlightedText> a drink.</HighlightedText>
+            Teh <HighlightedText> Lokal</HighlightedText>
           </>
         }
-      />
-      <Features
-        heading={
-          <>
-            #amazing <HighlightedText>us.</HighlightedText>
-          </>
-        }
-        cards={[
-          {
-            imageSrc: shopIconImageSrc,
-            title: "100+ Locations",
-            description: "Lorem ipsum donor amet siti ceali placeholder text",
-            url: "https://google.com",
-          },
-          {
-            imageSrc: chefIconImageSrc,
-            title: "Professional Chefs",
-            description: "Lorem ipsum donor amet siti ceali placeholder text",
-            url: "https://timerse.com",
-          },
-          {
-            imageSrc: celebrationIconImageSrc,
-            title: "Birthday Catering",
-            description: "Lorem ipsum donor amet siti ceali placeholder text",
-            url: "https://reddit.com",
-          },
-        ]}
-        imageContainerCss={tw`p-2!`}
-        imageCss={tw`w-20! h-20! `}
       />
 
       <Testimonial
-        subheading=""
+        subheading={<Subheading>Testimonial</Subheading>}
         heading={
           <>
-            #customers<HighlightedText>say</HighlightedText>
+            Dari <HighlightedText> Mereka</HighlightedText>
           </>
         }
       />

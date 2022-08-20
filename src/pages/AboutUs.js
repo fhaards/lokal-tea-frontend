@@ -8,13 +8,17 @@ import Header from "components/headers/LightNavbar.js";
 import Hero from "components/hero/SingleColumnSimple";
 import Footer from "components/footers/FiveColumnWithInputForm.js";
 import MainFeature1 from "components/features/TwoColWithButton.js";
-import Features from "components/features/ThreeColSimple.js";
+import Features from "components/features/ThreeColSimple2.js";
 import SupportIconImage from "images/icon/misc/support-icon.svg";
 import ShieldIconImage from "images/icon/misc/shield-icon.svg";
 import CustomerLoveIconImage from "images/icon/misc/simple-icon.svg";
-import imageSrc from "images/_dummy/background/bg1.jpg";
+import imageSrc from "images/_dummy/background/bg_hero2.png";
 import ImageAbout1 from "images/_dummy/square/square1.png";
 import ImageAbout2 from "images/_dummy/square/square4.png";
+
+import TeaCustomIcon from "images/icon/misc/tea-custom.svg";
+import TeaQualityIcon from "images/icon/misc/tea-quality.svg";
+import TeaPartyIcon from "images/icon/misc/tea-party.svg";
 
 const Subheading = tw.span`tracking-wider text-sm font-medium`;
 const HighlightedText = tw.span`text-primary-500 inline-block font-light`;
@@ -33,20 +37,16 @@ export default () => {
         }
         description={
           <>
-            In the last 20 years, bubble tea and milk tea drinks have been
-            popular in Indonesia. Now we want to bring you a different kind of
-            extraordinary, the next big thing in drink concept to set a new
-            trend in Indonesia; Cheese Tea drink. We also dream big of helping
-            you chase towards entrepreneurship opportunity. No boss, no boring
-            desk job. Just imagine the smell of freshly brewed tea and the
-            smiles of happy customers. Its the dream of millions. Your own tea
-            shops.
+            {" "}
+            Kami bermimpi besar untuk membantu Anda mengejar peluang
+            berwirausaha. Tidak ada bos, tidak ada pekerjaan meja yang
+            membosankan. Bayangkan saja aroma teh yang baru diseduh dan senyum
+            pelanggan yang senang. Ini adalah impian jutaan orang. Toko teh Anda
+            sendiri.
           </>
         }
         imageCsss={imageCss}
         imageSrc={imageSrc}
-        imageDecoratorBlob={true}
-        imageDecoratorBlobCss={tw`right-0 top-0 -translate-x-1/2 md:w-144 md:h-144 opacity-25`}
         primaryButtonText="Order Now"
         watchVideoButtonText="Meet The Chefs"
       />
@@ -54,19 +54,20 @@ export default () => {
         subheading={<Subheading>#RESPONSIBILITEA</Subheading>}
         heading={
           <>
-            MAKE FOR
-            <wbr /> <HighlightedText>THE BEST</HighlightedText>
+            Dibuat
+            <wbr /> <HighlightedText>Untuk Yang Terbaik</HighlightedText>
           </>
         }
         description={
           <>
             <DescriptionText>
-              Quality is king, so the pair went to the Taiwanese highlands to
-              source the authentic Taiwanese tea leaves known for its finest
-              quality and strong aroma and to develop the most delicious and
-              rich-tasting cheese foam. With the help of a Taiwanese tea master,
-              the duo worked on to formulate the best cheese tea drinks soon to
-              be known in Indonesia.
+              Kualitas adalah segalanya, jadi pasangan ini pergi ke dataran
+              tinggi Taiwan untuk mendapatkan daun teh asli Taiwan yang terkenal
+              dengan kualitas terbaik dan aroma yang kuat serta untuk
+              mengembangkan busa keju yang paling lezat dan kaya rasa. Dengan
+              bantuan seorang master teh Taiwan, duo ini bekerja untuk
+              merumuskan minuman teh keju terbaik yang akan segera dikenal di
+              Indonesia.
             </DescriptionText>
           </>
         }
@@ -79,8 +80,8 @@ export default () => {
         subheading={<Subheading>#THEVISION</Subheading>}
         heading={
           <>
-            AIM TO
-            <wbr /> <HighlightedText>EVERYONE</HighlightedText>
+            Target Untuk
+            <wbr /> <HighlightedText>Semua Orang</HighlightedText>
           </>
         }
         buttonRounded={false}
@@ -93,32 +94,33 @@ export default () => {
         subheading={<Subheading>#OURVALUES</Subheading>}
         heading={
           <>
-            WE FOLLOW
-            <wbr /> <HighlightedText>THESE</HighlightedText>
+            Kami
+            <wbr /> <HighlightedText>Terapkan</HighlightedText>
           </>
         }
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         cards={[
           {
-            imageSrc: SupportIconImage,
-            title: "24/7 Support",
+            imageSrc: TeaCustomIcon,
+            title: "Kustom Teh",
             description:
-              "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport",
+              "Kustom Teh sesuai imajinasi kamu dengan topping dan bahan bahan yang berbeda",
           },
           {
-            imageSrc: ShieldIconImage,
-            title: "Strong Teams",
+            imageSrc: TeaQualityIcon,
+            title: "Kualitas",
             description:
-              "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport",
+              "Bahan bahan Lokal namun mengutamakan Kualitas yang terjamin",
+            url: "https://timerse.com",
           },
           {
-            imageSrc: CustomerLoveIconImage,
-            title: "Customer Satisfaction",
-            description:
-              "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport",
+            imageSrc: TeaPartyIcon,
+            title: "Teman Pesta",
+            description: "Meriahkan dan Temani pestamu dengan teh dari kami",
+            url: "https://reddit.com",
           },
         ]}
-        linkText=""
+        imageContainerCss={tw`p-2!`}
+        imageCss={tw`w-20! h-20! `}
       />
       <Footer />
     </AnimationRevealPage>

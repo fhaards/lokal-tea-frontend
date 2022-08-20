@@ -12,20 +12,16 @@ import { SectionDescription } from "components/misc/Typography.js";
 import { ReactComponent as SvgDecoratorBlob3 } from "images/other/svg-decorator-blob-3.svg";
 
 const Container = tw.div`relative`;
-
 const ThreeColumnContainer = styled.div`
-  ${tw`flex flex-col items-center md:items-stretch md:flex-row flex-wrap md:justify-center max-w-screen-lg mx-auto py-20 md:py-24`}
+  ${tw`font-quicksand flex flex-col items-center md:items-stretch md:flex-row flex-wrap md:justify-center max-w-screen-lg mx-auto py-20 md:py-24`}
 `;
 const Subheading = tw(SubheadingBase)`mb-4`;
-const Heading = tw(SectionHeading)`w-full`;
+const Heading = tw(SectionHeading)`w-full font-libre`;
 const Description = tw(SectionDescription)`w-full text-center`;
-
 const VerticalSpacer = tw.div`mt-10 w-full`;
-
 const Column = styled.div`
   ${tw`md:w-1/2 lg:w-1/3 max-w-sm`}
 `;
-
 const Card = styled.div`
   ${tw`flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left h-full mx-4 px-2 py-8`}
   .imageContainer {

@@ -11,7 +11,9 @@ import { ReactComponent as SvgDecoratorBlob1 } from "images/other/svg-decorator-
 import { ReactComponent as SvgDecoratorBlob2 } from "images/other/svg-decorator-blob-7.svg";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col gap-5`;
-const Header = tw(SectionHeading)``;
+const Header = tw(
+  SectionHeading
+)`font-libre mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl md:text-left leading-tight`;
 const TabsControl = tw.div`flex flex-wrap max-w-screen-xl bg-transparent w-full p-5 lg:w-auto lg:p-2 rounded leading-none mt-12 xl:mt-0`;
 
 const TabControl = styled.div`
@@ -29,7 +31,7 @@ const TabControl = styled.div`
 
 const TabContent = tw(
   motion.div
-)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
+)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12 font-quicksand`;
 const CardContainer = tw.div`mt-10 px-3 w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
 const Card = tw(
   motion.a
@@ -54,9 +56,7 @@ const CardHoverOverlay = styled(motion.div)`
   ${tw`absolute inset-0 flex justify-center items-center`}
 `;
 const CardButton = tw(PrimaryButtonBase)`text-sm`;
-
 const CardReview = tw.div`hidden font-medium text-xs text-gray-600`;
-
 const CardText = tw.div`py-4 px-0 text-gray-900`;
 const CardTitle = tw.h5`text-lg font-semibold group-hover:text-primary-500`;
 const CardContent = tw.p`mt-1 text-sm font-medium text-gray-600`;

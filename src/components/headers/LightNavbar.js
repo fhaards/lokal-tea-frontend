@@ -16,7 +16,7 @@ const Header = tw.header`
 export const NavLinks = tw.div`inline-block`;
 export const NavLink = tw.a`
   text-lg py-3 lg:py-2 lg:text-sm lg:ml-10 lg:my-0 border-t lg:border-0 sm:border-0
-  font-semibold tracking-wide transition duration-300 hocus:text-primary-500
+  font-semibold font-quicksand tracking-wide transition duration-300 hocus:text-primary-500
 `;
 export const PrimaryLink = tw(NavLink)`
   lg:mx-0 px-8 py-3 rounded text-gray-100
