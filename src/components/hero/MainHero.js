@@ -19,7 +19,7 @@ const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover h-screen min-h-144  bg-cover bg-center bg-fixed`}
   background-image: url("https://images.unsplash.com/photo-1433704334812-6c45b0b8784d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80");
 `;
-const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-green-900 opacity-75 `;
+const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-gray-900 opacity-75 `;
 const HeroContainer = tw.div`z-20 relative px-5 md:px-0 max-w-screen-xl mx-auto h-full flex flex-col`;
 const Content = tw.div`px-6 lg:px-0 flex flex-1 flex-col justify-center items-center`;
 

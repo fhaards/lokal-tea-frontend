@@ -14,12 +14,12 @@ import celebrationIconImageSrc from "images/icon/misc/celebration-icon.svg";
 import shopIconImageSrc from "images/icon/misc/shop-icon.svg";
 
 /** Setup Background */
-import imgAbout from "images/_dummy/background/bg_hero_2.jpg";
+import imgAbout from "images/_dummy/square/square_about_home.png";
 export default () => {
   const Subheading = tw.span`tracking-wider text-sm font-medium`;
   const HighlightedText = tw.span`text-primary-500 inline-block font-light`;
   const Description = tw.span`inline-block mt-8 `;
-  const imageCss = tw`rounded-tl-full rounded-br-full`;
+  const imageCss = tw``;
 
   return (
     <AnimationRevealPage>
@@ -36,6 +36,47 @@ export default () => {
         primaryButtonText="Order Now"
         watchVideoButtonText="Meet The Chefs"
       />
+
+      <MainFeature2
+        subheading={<Subheading>Timeline Preparation</Subheading>}
+        heading={
+          <>
+            #open<HighlightedText>new franchise </HighlightedText>
+          </>
+        }
+        steps={[
+          {
+            heading: "Commitment",
+            description: "Making deal with commitment",
+          },
+          {
+            heading: "Location Survey",
+            description: "We help to get the best location",
+          },
+          {
+            heading: "Designing",
+            description: "Design youre stroe",
+          },
+          {
+            heading: "Repayment",
+            description: "Payment Fee",
+          },
+          {
+            heading: "Equipment & Materials",
+            description: "Send Equipment & Raw Materials to new store",
+          },
+          {
+            heading: "Employee Training",
+            description: "Training new Employee",
+          },
+          {
+            heading: "Opening Store",
+            description: "Good Luck :)",
+          },
+        ]}
+        textOnLeft={true}
+      />
+
       <MainFeature
         subheading={<Subheading>Established Since 2022</Subheading>}
         heading={
@@ -101,45 +142,7 @@ export default () => {
         imageContainerCss={tw`p-2!`}
         imageCss={tw`w-20! h-20! `}
       />
-      <MainFeature2
-        subheading={<Subheading>Timeline Preparation</Subheading>}
-        heading={
-          <>
-            #open<HighlightedText>new franchise </HighlightedText>
-          </>
-        }
-        steps={[
-          {
-            heading: "Commitment",
-            description: "Making deal with commitment",
-          },
-          {
-            heading: "Location Survey",
-            description: "We help to get the best location",
-          },
-          {
-            heading: "Designing",
-            description: "Design youre stroe",
-          },
-          {
-            heading: "Repayment",
-            description: "Payment Fee",
-          },
-          {
-            heading: "Equipment & Materials",
-            description: "Send Equipment & Raw Materials to new store",
-          },
-          {
-            heading: "Employee Training",
-            description: "Training new Employee",
-          },
-          {
-            heading: "Opening Store",
-            description: "Good Luck :)",
-          },
-        ]}
-        textOnLeft={true}
-      />
+
       <Testimonial
         subheading=""
         heading={

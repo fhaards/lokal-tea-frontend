@@ -6,7 +6,7 @@ import { css } from "styled-components/macro";
 import Header from "../headers/light.js";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/other/svg-decorator-blob-1.svg";
 import DesignIllustration from "../../images/illustration/design-illustration-2.svg";
-import CustomersLogoStripImage from "../../images/other/customers-logo-strip.png";
+import CustomersLogoStripImage from "../../images/illustration/customer-support-illustration.svg";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
