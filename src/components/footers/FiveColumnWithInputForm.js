@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 
-import LogoImage from "images/app_img/lokaltea_logo_white.svg";
+import LogoImage from "images/app_img/lokaltea_logo.svg";
 import { ReactComponent as FacebookIcon } from "images/icon/social/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "images/icon/social/twitter-icon.svg";
 import { ReactComponent as YoutubeIcon } from "images/icon/social/youtube-icon.svg";
 
-const Container = tw.div`relative bg-gray-900 text-gray-700 -mb-8 -mx-8 px-8 py-16 lg:py-16`;
+const Container = tw.div`relative bg-gray-100 text-gray-700 -mb-8 -mx-8 px-8 py-16 lg:py-16`;
 const Content = tw.div`max-w-screen-xl mx-auto relative z-10`;
 const SixColumns = tw.div`flex flex-wrap text-center sm:text-left justify-center sm:justify-start md:justify-between -mt-12`;
 const Column = tw.div`px-4 sm:px-0 sm:w-1/4 md:w-auto mt-12`;
@@ -27,7 +27,7 @@ const Input = tw.input`bg-gray-300 px-6 py-3 rounded sm:rounded-r-none border-2 
 const SubscribeButton = tw(
   PrimaryButtonBase
 )`mt-4 sm:mt-0 w-full sm:w-auto rounded sm:rounded-l-none px-8 py-3`;
-const Divider = tw.div`my-16 border-b-2 border-gray-700 w-full`;
+const Divider = tw.div`my-16 border-b-2 border-gray-300 w-full`;
 const ThreeColColumn = tw.div`flex flex-col md:flex-col gap-5 items-center justify-between`;
 const LogoContainer = tw.div`flex items-center justify-center md:justify-start`;
 const LogoImg = tw.img`h-10`;

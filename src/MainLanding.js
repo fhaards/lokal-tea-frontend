@@ -2,7 +2,7 @@ import React from "react";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import Hero from "./components/hero/SingleColumnSimple";
+import Hero from "./components/hero/TwoColumnSimpleWithBackground";
 
 import Features from "./components/features/ThreeColSimple2";
 import Features2 from "./components/cards/ThreeColSliderSimple";
@@ -12,7 +12,7 @@ import TabGrid from "./components/cards/TabCardGrid.js";
 import Testimonial from "./components/testimonials/ThreeColumnWithProfileImage.js";
 import Footer from "./components/footers/FiveColumnWithInputForm.js";
 
-import imageSrc from "images/_dummy/background/bg_hero.png";
+import heroImage1 from "images/_dummy/square/tea_display_1.png";
 import TeaCustomIcon from "images/icon/misc/tea-custom.svg";
 import TeaQualityIcon from "images/icon/misc/tea-quality.svg";
 import TeaPartyIcon from "images/icon/misc/tea-party.svg";
@@ -21,15 +21,15 @@ import TeaPartyIcon from "images/icon/misc/tea-party.svg";
 import imgAbout from "images/_dummy/square/square_about_home.png";
 export default () => {
   const HighlightedText = tw.span`text-primary-500 inline-block`;
-  const imageCss = tw``;
+  const imageCss = tw`hidden md:inline-block md:w-100 md:h-100  md:opacity-100 opacity-75`;
 
   return (
     <AnimationRevealPage>
       <Hero
         heading={
           <>
-            a <span> simple</span> cup of <span>tea</span> is far from a{" "}
-            <span>simple</span> matter
+            A <span> Simple</span> cup of <span>Tea</span> is far from a{" "}
+            <span>Simple</span> matter
             <br />
             <br />
           </>
@@ -40,8 +40,10 @@ export default () => {
           </>
         }
         imageCss={imageCss}
-        imageSrc={imageSrc}
-        imageDecoratorBlob={false}
+        heroImage={heroImage1}
+        textOnLeft={true}
+        imageDecoratorBlob={true}
+        imageDecoratorBlobCss={tw`hidden md:inline-block right-0 md:top-0 md:bottom-1/2  w-144 h-144 md:w-6/12 md:h-10/12 opacity-25 `}
         primaryButtonText="Order Now"
         watchVideoButtonText="Meet The Chefs"
       />

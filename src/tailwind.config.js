@@ -196,6 +196,16 @@ module.exports = {
       cover: "cover",
       contain: "contain",
     },
+    // backdropBlur: {
+    //   xs: "2px",
+    //   sm: "4px",
+    //   md: "12px",
+    //   lg: "16px",
+    //   xl: "24px",
+    //   "2xl": "40px",
+    //   "3xl": "64px",
+    // },
+    // backdropFilter: ["hover", "focus"],
     borderColor: (theme) => ({
       ...theme("colors"),
       DEFAULT: theme("colors.gray.300", "currentColor"),
@@ -266,6 +276,8 @@ module.exports = {
     },
     fontFamily: {
       display: ["Inter", "system-ui"],
+      dmsans: ["DM Sans", "sans-serif"],
+      dmdisplay: ["DM Serif Display", "serif"],
       libre: ["Libre Baskerville", "serif"],
       quicksand: ["Quicksand", "sans-serif"],
       sans: [

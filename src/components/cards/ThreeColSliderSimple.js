@@ -19,7 +19,7 @@ const HeadingWithControl = tw.div`flex flex-col items-center sm:items-stretch sm
 const Heading = tw(SectionHeading)`text-left`;
 const Controls = tw.div`flex items-center`;
 const ControlButton = styled(PrimaryButtonBase)`
-  ${tw`mt-4 sm:mt-0 first:ml-0 ml-3 p-2  rounded-lg bg-gray-600 hover:bg-gray-800 focus:bg-gray-900 focus:outline-none focus:border-0 focus:shadow-none`}
+  ${tw`mt-4 sm:mt-0 first:ml-0 ml-3 p-2  rounded-lg bg-gray-100 text-gray-900 hover:bg-gray-800 focus:bg-gray-900 focus:outline-none focus:border-0 focus:shadow-none`}
   svg {
     ${tw`w-4 h-4`}
   }

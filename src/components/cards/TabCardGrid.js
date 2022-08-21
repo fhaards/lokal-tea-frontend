@@ -11,9 +11,7 @@ import { ReactComponent as SvgDecoratorBlob1 } from "images/other/svg-decorator-
 import { ReactComponent as SvgDecoratorBlob2 } from "images/other/svg-decorator-blob-7.svg";
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col gap-5`;
-const Header = tw(
-  SectionHeading
-)`font-libre mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl md:text-left leading-tight`;
+const Header = tw(SectionHeading)`text-center`;
 const TabsControl = tw.div`flex flex-wrap max-w-screen-xl bg-transparent w-full p-5 lg:w-auto lg:p-2 rounded leading-none mt-12 xl:mt-0`;
 
 const TabControl = styled.div`
