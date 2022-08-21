@@ -3,9 +3,10 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {
-  SectionHeading,
-  Subheading as SubheadingBase,
+  SectionHeading as Heading,
+  Subheading as Subheading,
 } from "components/misc/Headings.js";
+import { SectionDescription as Description } from "components/misc/Typography.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import TeamIllustrationSrc from "images/illustration/team-illustration-2.svg";
 import { ReactComponent as SvgDotPattern } from "images/other/dot-pattern.svg";
@@ -16,6 +17,7 @@ const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
 const ImageColumn = tw(
   Column
 )`md:w-6/12 flex flex-shrink-0 relative items-center justify-center`;
+
 const TextColumn = styled(Column)((props) => [
   tw`md:w-6/12 mt-16 md:mt-0`,
   props.textOnLeft
@@ -34,12 +36,6 @@ const DecoratorBlob = styled(SvgDotPattern)((props) => [
 ]);
 
 const TextContent = tw.div`lg:py-8`;
-const Subheading = tw(SubheadingBase)`text-center md:text-left font-quicksand`;
-const Heading = tw(
-  SectionHeading
-)`font-libre mt-4 font-bold text-left text-3xl sm:text-4xl lg:text-5xl md:text-left leading-tight`;
-const Description = tw.p`font-quicksand mt-4 md:text-justify text-base md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100`;
-
 const PrimaryButton = styled(PrimaryButtonBase)((props) => [
   tw`mt-8 md:mt-8 text-sm inline-block mx-auto md:mx-0`,
   props.buttonRounded && tw`rounded-full`,

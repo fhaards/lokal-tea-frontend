@@ -3,14 +3,16 @@ import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import Hero from "./components/hero/SingleColumnSimple";
+
 import Features from "./components/features/ThreeColSimple2";
+import Features2 from "./components/cards/ThreeColSliderSimple";
 import MainFeature from "./components/features/TwoColWithButton.js";
 import MainFeature2 from "./components/features/SingleColWithSteps.js";
 import TabGrid from "./components/cards/TabCardGrid.js";
 import Testimonial from "./components/testimonials/ThreeColumnWithProfileImage.js";
 import Footer from "./components/footers/FiveColumnWithInputForm.js";
-import imageSrc from "images/_dummy/background/bg_hero.png";
 
+import imageSrc from "images/_dummy/background/bg_hero.png";
 import TeaCustomIcon from "images/icon/misc/tea-custom.svg";
 import TeaQualityIcon from "images/icon/misc/tea-quality.svg";
 import TeaPartyIcon from "images/icon/misc/tea-party.svg";
@@ -18,9 +20,7 @@ import TeaPartyIcon from "images/icon/misc/tea-party.svg";
 /** Setup Background */
 import imgAbout from "images/_dummy/square/square_about_home.png";
 export default () => {
-  const Subheading = tw.span`text-sm font-quicksand`;
   const HighlightedText = tw.span`text-primary-500 inline-block`;
-  const Description = tw.span`inline-block mt-8 font-quicksand`;
   const imageCss = tw``;
 
   return (
@@ -73,7 +73,7 @@ export default () => {
       />
 
       <MainFeature2
-        subheading={<Subheading>Alur Persiapan</Subheading>}
+        subheading={<>Alur Persiapan</>}
         heading={
           <>
             #Buka <HighlightedText> Outlet </HighlightedText>
@@ -113,21 +113,23 @@ export default () => {
         textOnLeft={true}
       />
 
+      <Features2 heading={<></>} />
+
       <MainFeature
-        subheading={<Subheading>Didirikan 2022</Subheading>}
+        subheading={<>Didirikan 2022</>}
         heading={
           <>
             Cerita <HighlightedText> Kami</HighlightedText>
           </>
         }
         description={
-          <Description>
+          <>
             Di jalan kehidupan apa pun yang Anda jalani, teh dapat melayani
             tujuan itu. Kami benar-benar percaya bahwa saat Anda melangkah
             bersama kami, kami dapat menemukan teh khusus untuk momen spesial
             Anda
             <br />
-          </Description>
+          </>
         }
         buttonRounded={false}
         buttonHidden={true}
@@ -151,7 +153,7 @@ export default () => {
       />
 
       <Testimonial
-        subheading={<Subheading>Testimonial</Subheading>}
+        subheading={<>Testimonial</>}
         heading={
           <>
             Dari <HighlightedText> Mereka</HighlightedText>

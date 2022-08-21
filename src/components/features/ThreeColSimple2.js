@@ -3,22 +3,29 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {
-  SectionHeading,
+  SectionHeading as HeadingBase,
   Subheading as SubheadingBase,
 } from "components/misc/Headings.js";
-import { SectionDescription } from "components/misc/Typography.js";
+import {
+  SectionDescription,
+  CardDescription as CardDescription,
+  CardTitle as CardTitle,
+} from "components/misc/Typography.js";
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import SupportIconImage from "images/icon/misc/support-icon.svg";
 import ShieldIconImage from "images/icon/misc/shield-icon.svg";
 import CustomizeIconImage from "images/icon/misc/customize-icon.svg";
 import { ReactComponent as SvgDecoratorBlob3 } from "images/other/svg-decorator-blob-3.svg";
 
-const Heading = tw(SectionHeading)`font-libre`;
-const Subheading = tw(SubheadingBase)`font-quicksand text-center mb-3`;
-const Description = tw(SectionDescription)`font-quicksand text-center mx-auto`;
+const Heading = tw(HeadingBase)`text-center`;
+const Subheading = tw(SubheadingBase)`text-center`;
+const Description = tw(SectionDescription)`text-center mx-auto`;
+const CardTitleText = tw(CardTitle)`mt-4`;
+
 const ThreeColumnContainer = styled.div`
-  ${tw`font-quicksand mt-10 flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap lg:justify-center max-w-screen-lg mx-auto`}
+  ${tw`mt-10 flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap lg:justify-center max-w-screen-lg mx-auto`}
 `;
+
 const Column = styled.div`
   ${tw`lg:w-1/3 max-w-xs`}
 `;
@@ -30,12 +37,6 @@ const Card = styled.a`
     img {
       ${tw`w-5 h-5`}
     }
-  }
-  .title {
-    ${tw`mt-4 font-bold text-xl leading-none text-primary-500`}
-  }
-  .description {
-    ${tw`mt-4 text-sm font-medium text-secondary-300`}
   }
 `;
 
@@ -81,8 +82,8 @@ export default ({
                 <span className="imageContainer" css={imageContainerCss}>
                   <img src={card.imageSrc} alt="" css={imageCss} />
                 </span>
-                <span className="title">{card.title}</span>
-                <p className="description">{card.description}</p>
+                <CardTitleText>{card.title}</CardTitleText>
+                <CardDescription>{card.description}</CardDescription>
               </Card>
             </Column>
           ))}

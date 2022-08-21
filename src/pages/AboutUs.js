@@ -1,17 +1,11 @@
 import React from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import tw from "twin.macro";
-import styled from "styled-components";
-import { css } from "styled-components/macro";
-import { useScrollable } from "components/headers/useScrollable.js";
-import Header from "components/headers/LightNavbar.js";
 import Hero from "components/hero/SingleColumnSimple";
 import Footer from "components/footers/FiveColumnWithInputForm.js";
 import MainFeature1 from "components/features/TwoColWithButton.js";
 import Features from "components/features/ThreeColSimple2.js";
-import SupportIconImage from "images/icon/misc/support-icon.svg";
-import ShieldIconImage from "images/icon/misc/shield-icon.svg";
-import CustomerLoveIconImage from "images/icon/misc/simple-icon.svg";
+
 import imageSrc from "images/_dummy/background/bg_hero2.png";
 import ImageAbout1 from "images/_dummy/square/square1.png";
 import ImageAbout2 from "images/_dummy/square/square4.png";
@@ -20,10 +14,8 @@ import TeaCustomIcon from "images/icon/misc/tea-custom.svg";
 import TeaQualityIcon from "images/icon/misc/tea-quality.svg";
 import TeaPartyIcon from "images/icon/misc/tea-party.svg";
 
-const Subheading = tw.span`tracking-wider text-sm font-medium`;
 const HighlightedText = tw.span`text-primary-500 inline-block font-light`;
-const DescriptionText = tw.span`text-gray-600 text-right`;
-const imageCss = tw`p-5 bg-red-500`;
+const imageCss = tw``;
 
 export default () => {
   return (
@@ -51,7 +43,7 @@ export default () => {
         watchVideoButtonText="Meet The Chefs"
       />
       <MainFeature1
-        subheading={<Subheading>#RESPONSIBILITEA</Subheading>}
+        subheading={<>#tehlokal #tehterbaik</>}
         heading={
           <>
             Dibuat
@@ -60,7 +52,7 @@ export default () => {
         }
         description={
           <>
-            <DescriptionText>
+            <>
               Kualitas adalah segalanya, jadi pasangan ini pergi ke dataran
               tinggi Taiwan untuk mendapatkan daun teh asli Taiwan yang terkenal
               dengan kualitas terbaik dan aroma yang kuat serta untuk
@@ -68,7 +60,7 @@ export default () => {
               bantuan seorang master teh Taiwan, duo ini bekerja untuk
               merumuskan minuman teh keju terbaik yang akan segera dikenal di
               Indonesia.
-            </DescriptionText>
+            </>
           </>
         }
         buttonRounded={false}
@@ -77,7 +69,7 @@ export default () => {
         imageSrc={ImageAbout1}
       />
       <MainFeature1
-        subheading={<Subheading>#THEVISION</Subheading>}
+        subheading={<>Visi Kami</>}
         heading={
           <>
             Target Untuk
@@ -91,7 +83,7 @@ export default () => {
         textOnLeft={false}
       />
       <Features
-        subheading={<Subheading>#OURVALUES</Subheading>}
+        subheading={<>Menempatkan</>}
         heading={
           <>
             Kami
