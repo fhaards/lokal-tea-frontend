@@ -13,20 +13,20 @@ import Header, {
 import { useScrollable } from "components/headers/useScrollable.js";
 
 const Container = styled.div`
-  ${tw`relative  bg-center bg-cover h-144 md:h-screen items-center`}
+  ${tw`relative inset-0 bg-center bg-cover h-screen lg:h-auto items-center bg-gray-500`}
 `;
 
-const HeroContainer = tw.div`flex flex-col md:flex-row w-screen mx-auto py-20 md:py-24 justify-center items-center`;
-const Content = tw.div`z-20 px-6 lg:px-0 flex flex-col justify-center items-center md:w-8/12 lg:w-5/12 xl:w-7/12`;
-const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-primary-100 opacity-100 mx-auto`;
+const HeroContainer = tw.div`flex flex-col md:flex-row max-w-screen-xl mx-auto py-24 lg:py-24 h-full justify-center md:justify-start items-center mb-48`;
+const Content = tw.div`w-full z-20 px-6 lg:px-0 flex flex-col md:w-8/12 lg:w-4/12 xl:w-6/12`;
+const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-white opacity-0 mx-auto`;
 const HeroImageBackground = styled.div`
-  ${tw`z-0 absolute inset-0 h-144 md:h-screen object-cover w-full mx-auto  `}
+  ${tw`z-0 absolute inset-0 w-screen h-auto w-full lg:mx-auto bg-green-200`}
 `;
 const HeroImageSet = styled.img`
-  ${tw`w-full h-full object-cover`}
+  ${tw`absolute h-7/12 md:h-7/12 lg:h-screen md:right-0 lg:right-0 bottom-0 lg:top-0 object-cover`}
 `;
 const Heading = styled.h1`
-  ${tw`font-montseralt uppercase text-center text-4xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-none -mt-24 sm:mt-0 max-w-2xl`}
+  ${tw`font-montseralt uppercase text-4xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-none mt-0 xl:mt-32 max-w-2xl`}
   span {
     ${tw`inline-block mt-2 text-primary-500`}
   }
@@ -39,7 +39,7 @@ const SubHeading = styled.h3`
   }
 `;
 
-const Description = tw.p`font-montser text-gray-800 mt-4 md:text-center text-sm md:text-sm lg:text-lg xl:text-3xl leading-snug`;
+const Description = tw.p`rounded-3xl font-montser font-medium text-gray-800 mt-4 text-lg sm:text-3xl md:text-lg lg:text-xl xl:text-xl leading-snug`;
 
 export default ({ heading, subHeading, description, imageSrc = null }) => {
   const { isScroll } = useScrollable();
@@ -47,7 +47,7 @@ export default ({ heading, subHeading, description, imageSrc = null }) => {
   /**  Animated when scroll */
   const MainHeader = styled.div`
     ${isScroll
-      ? tw`z-30 h-3/12 flex justify-between mx-auto w-full`
+      ? tw`z-30 absolute pt-10 h-3/12 flex justify-between mx-auto w-full`
       : tw`z-30 fixed left-0 top-0 h-20 bg-white w-full mx-auto border-b`}
   `;
 

@@ -118,23 +118,19 @@ export default ({
 
         <Content>
           <TextColumn textOnLeft={textOnLeft}>
-            <AnimationReveal>
-              <Heading>{heading}</Heading>
-              <SubHeading>{subHeading}</SubHeading>
-              <Description>{description}</Description>
-            </AnimationReveal>
+            <Heading>{heading}</Heading>
+            <SubHeading>{subHeading}</SubHeading>
+            <Description>{description}</Description>
           </TextColumn>
 
           <ImageColumn>
-            <AnimationReveal direction="left">
-              <Image
-                css={imageCss}
-                src={heroImage}
-                imageBorder={imageBorder}
-                imageShadow={imageShadow}
-                imageRounded={imageRounded}
-              />
-            </AnimationReveal>
+            <Image
+              css={imageCss}
+              src={heroImage}
+              imageBorder={imageBorder}
+              imageShadow={imageShadow}
+              imageRounded={imageRounded}
+            />
           </ImageColumn>
         </Content>
 

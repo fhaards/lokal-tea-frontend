@@ -24,7 +24,7 @@ export default () => {
   const imageCss = tw`md:opacity-100 opacity-75`;
 
   return (
-    <AnimationRevealPage disabled>
+    <AnimationRevealPage childern={["img"]}>
       <Hero
         heading={
           <>
