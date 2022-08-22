@@ -5,8 +5,8 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { ContentWithPaddingXl, Container } from "components/misc/Layouts.js";
 import {
   SectionHeading as HeadingBase,
-  Subheading as SubheadingBase,
-} from "components/misc/Headings.js";
+  SectionSubheading as SubheadingBase,
+} from "components/misc/Typography.js";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/other/svg-decorator-blob-7.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/other/svg-decorator-blob-8.svg";
 

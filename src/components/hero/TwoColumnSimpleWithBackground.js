@@ -10,8 +10,10 @@ import Header, {
   NavToggle,
   DesktopNavLinks,
 } from "../headers/LightNavbar";
+import { SectionDescription as DescriptionText } from "components/misc/Typography.js";
 import { useScrollable } from "components/headers/useScrollable.js";
 import { ReactComponent as SvgDotPattern } from "images/other/svg-decorator-blob-2.svg";
+import AnimationReveal from "helpers/AnimationRevealPage.js";
 
 const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover h-144 md:h-screen items-center bg-primary-100 rounded-b-6xl md:rounded-b-none md:rounded-br-full md:rounded-bl-3xl`}
@@ -34,18 +36,21 @@ const TextColumn = styled(Content)((props) => [
     : tw`md:ml-10 lg:ml-12 md:order-last`,
 ]);
 const Heading = styled.h1`
-  ${tw`font-dmdisplay text-4xl sm:text-4xl lg:text-5xl xl:text-6xl normal-case text-primary-500 leading-none -mt-24 sm:mt-0 max-w-2xl`}
+  ${tw`font-montseralt text-4xl sm:text-4xl lg:text-5xl xl:text-6xl normal-case text-primary-500 leading-none -mt-24 sm:mt-0 max-w-2xl`}
   span {
     ${tw`inline-block mt-2 text-gray-900`}
   }
 `;
 const SubHeading = styled.h3`
-  ${tw`font-dmsans w-full text-sm sm:text-sm lg:text-lg xl:text-xl tracking-widest text-gray-800 leading-snug sm:mt-3 mt-3`}
+  ${tw`w-full text-sm sm:text-sm lg:text-lg xl:text-xl tracking-widest text-gray-800 leading-snug sm:mt-3 mt-3`}
   span {
     ${tw`text-red-700`}
   }
 `;
-const Description = tw.p`font-dmsans text-gray-100 mt-4 md:text-center text-sm md:text-xl lg:text-xl leading-snug`;
+const Description = tw(
+  DescriptionText
+)`text-gray-700 mt-4 md:text-center text-sm md:text-xl lg:text-xl leading-snug`;
+
 const ImageColumn = tw(
   Content
 )`md:w-6/12 flex-shrink-0 md:relative absolute -z-10`;
@@ -84,10 +89,12 @@ export default ({
   /** Styling Headers */
   const StyledHeader = styled(Header)`
     ${tw`z-30 w-full max-w-screen-xl flex items-center h-full mx-auto px-6 sm:px-0`}
-    ${DesktopNavLinks} ${NavLink} ${LogoLink} {
+    ${DesktopNavLinks} ${NavLink} {
       ${isScroll
-        ? tw`text-gray-900 hover:text-primary-500 bg-gray-900`
-        : tw`text-gray-800 hover:text-primary-500`}
+        ? tw`text-gray-900 hover:text-primary-500`
+        : tw`text-gray-900 hover:text-primary-500`}
+    }
+    ${LogoLink} {
     }
     ${NavToggle}.closed {
       ${isScroll
@@ -114,12 +121,16 @@ export default ({
       </MainHeader>
       <HeroContainer>
         <OpacityOverlay></OpacityOverlay>
+
         <Content>
           <TextColumn textOnLeft={textOnLeft}>
-            <Heading>{heading}</Heading>
-            <SubHeading>{subHeading}</SubHeading>
-            <Description>{description}</Description>
+            <AnimationReveal direction="right">
+              <Heading>{heading}</Heading>
+              <SubHeading>{subHeading}</SubHeading>
+              <Description>{description}</Description>
+            </AnimationReveal>
           </TextColumn>
+
           <ImageColumn>
             <Image
               css={imageCss}
@@ -130,6 +141,7 @@ export default ({
             />
           </ImageColumn>
         </Content>
+
         {imageDecoratorBlob && <DecoratorBlob css={imageDecoratorBlobCss} />}
       </HeroContainer>
     </Container>

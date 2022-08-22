@@ -2,12 +2,10 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import {
-  SectionHeading as HeadingBase,
-  Subheading as SubheadingBase,
-} from "components/misc/Headings.js";
 
 import {
+  SectionHeading as HeadingBase,
+  SectionSubheading as SubheadingBase,
   CardTitle as CardTitle,
   CardDescription as CardDescription,
 } from "components/misc/Typography.js";
@@ -19,7 +17,7 @@ const TextColumn = styled(Column)((props) => [
   tw`md:w-full mt-16 md:mt-0`,
   props.textOnLeft ? tw`` : tw``,
 ]);
-const TextContent = tw.div`lg:py-8 text-center md:text-left w-full font-quicksand`;
+const TextContent = tw.div`lg:py-8 text-center md:text-left w-full`;
 
 const Heading = tw(HeadingBase)`text-center`;
 const Subheading = tw(SubheadingBase)`text-center`;
@@ -28,7 +26,7 @@ const Step = tw.li`flex flex-col  md:flex-row items-center md:items-start border
 const StepNumber = tw.div`font-semibold text-4xl leading-none text-primary-400`;
 const StepText = tw.div`mt-3 md:mt-0 md:ml-6`;
 
-const StepHeading = tw(CardTitle)`leading-none text-xl font-semibold`;
+const StepHeading = tw(CardTitle)`leading-none text-xl`;
 const StepDescription = tw(
   CardDescription
 )`mt-3 max-w-xs leading-snug text-sm text-gray-600 font-medium`;

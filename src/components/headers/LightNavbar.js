@@ -15,13 +15,15 @@ const Header = tw.header`
 `;
 export const NavLinks = tw.div`inline-block`;
 export const NavLink = tw.a`
-  text-lg py-3 lg:py-2 lg:text-sm lg:ml-10 lg:my-0 border-t lg:border-0 sm:border-0
-  font-bold uppercase font-dmsans tracking-widest transition duration-300 hocus:text-primary-500
+  text-lg py-3 lg:py-2 lg:text-sm lg:ml-10 lg:my-0 lg:border-0 sm:border-0
+  font-montser font-semibold uppercase tracking-widest transition duration-300 hocus:text-primary-500
 `;
+
 export const PrimaryLink = tw(NavLink)`
   lg:mx-0 px-8 py-3 rounded text-gray-100
   hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline border-0 border-t-0 border-b-0
 `;
+
 export const LogoLink = styled(NavLink)`
   ${tw`flex items-center font-black border-0 border-t-0 border-b-0 text-2xl! ml-0!`};
   img {
@@ -32,17 +34,19 @@ export const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-b
 export const NavToggle = tw.button`
   lg:hidden z-20 focus:outline-none hocus:text-primary-500 transition duration-300
 `;
+
 export const MobileNavLinks = motion(styled.div`
-  ${tw`lg:hidden z-10 fixed items-center top-0 inset-x-0 shadow-xl text-gray-900 bg-white h-6/12`}
+  ${tw`lg:hidden z-10 fixed items-center top-0 inset-x-0 shadow-xl text-gray-900 bg-white h-full`}
   ${NavLinks} {
-    ${tw`flex flex-col mx-5`}
+    ${tw`flex flex-col mx-10 mt-48`}
+  }
+  ${NavLink} {
+    ${tw`text-4xl`}
   }
 `);
 export const DesktopNavLinks = tw.nav`
   hidden lg:flex flex-1 justify-between items-center
 `;
-
-const OpacityCloseBtn = tw.div`z-10 absolute inset-0 bg-black opacity-75`;
 
 export default ({
   roundedHeaderButton = false,
@@ -72,18 +76,14 @@ export default ({
   const collapseBreakpointCss =
     collapseBreakPointCssMap[collapseBreakpointClass];
 
-  const SetCloseIcon = tw.div`fixed bottom-0 left-0 w-full h-6/12 flex items-center justify-center`;
+  const SetCloseIcon = tw.div`fixed top-0 right-0 w-20 h-20 flex items-center justify-center`;
 
   // logoLink = isUpper ? defaultLogoLink : collapseLogoLink;
 
   links = links || defaultLinks;
   return (
     <Header className={className || "header-light"}>
-      <DesktopNavLinks
-        initial={{ x: "150%", display: "none" }}
-        animate={animation}
-        css={collapseBreakpointCss.desktopNavLinks}
-      >
+      <DesktopNavLinks css={collapseBreakpointCss.desktopNavLinks}>
         <LogoLink href="/">
           <img src={isScroll ? logoLight : logoDark} alt="logo" height="200" />
         </LogoLink>
@@ -109,12 +109,7 @@ export default ({
         >
           {showNavLinks ? (
             <SetCloseIcon>
-              <OpacityCloseBtn />
-              <CloseIcon
-                initial={{ x: "150%", display: "none" }}
-                animate={animation}
-                tw="z-20 w-20 h-20 bg-gray-100 rounded-full p-2 place-items-center "
-              />
+              <CloseIcon tw="z-20 w-12 h-12 hover:bg-gray-100 rounded-full p-2 place-items-center " />
             </SetCloseIcon>
           ) : (
             <MenuIcon tw="w-6 h-6" />

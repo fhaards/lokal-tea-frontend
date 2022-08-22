@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {
   SectionHeading as Heading,
-  Subheading as Subheading,
-} from "components/misc/Headings.js";
-import { SectionDescription as Description } from "components/misc/Typography.js";
+  SectionSubheading as Subheading,
+  SectionDescription as Description,
+} from "components/misc/Typography.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import TeamIllustrationSrc from "images/illustration/team-illustration-2.svg";
 import { ReactComponent as SvgDotPattern } from "images/other/dot-pattern.svg";

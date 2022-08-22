@@ -6,7 +6,7 @@ import Footer from "components/footers/FiveColumnWithInputForm.js";
 import MainFeature1 from "components/features/TwoColWithButton.js";
 import Features from "components/features/ThreeColSimple2.js";
 
-import imageSrc from "images/_dummy/background/bg_hero2.png";
+import imageSrc from "images/_dummy/background/bg_hero_2.jpg";
 import ImageAbout1 from "images/_dummy/square/square1.png";
 import ImageAbout2 from "images/_dummy/square/square4.png";
 

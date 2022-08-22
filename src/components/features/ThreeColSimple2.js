@@ -4,12 +4,10 @@ import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {
   SectionHeading as HeadingBase,
-  Subheading as SubheadingBase,
-} from "components/misc/Headings.js";
-import {
+  SectionSubheading as SubheadingBase,
   SectionDescription,
   CardDescription as CardDescription,
-  CardTitle as CardTitle,
+  CardTitle,
 } from "components/misc/Typography.js";
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import SupportIconImage from "images/icon/misc/support-icon.svg";

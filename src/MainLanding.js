@@ -2,12 +2,12 @@ import React from "react";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import Hero from "./components/hero/TwoColumnSimpleWithBackground";
 
+import Hero from "./components/hero/TwoColumnSimpleWithBackground";
 import Features from "./components/features/ThreeColSimple2";
-import Features2 from "./components/cards/ThreeColSliderSimple";
-import MainFeature from "./components/features/TwoColWithButton.js";
-import MainFeature2 from "./components/features/SingleColWithSteps.js";
+import FeaturesStep from "./components/features/SingleColWithSteps.js";
+import FeaturesSlider from "./components/cards/ThreeColSliderSimple";
+import FeaturesAbout from "./components/features/TwoColWithButton.js";
 import TabGrid from "./components/cards/TabCardGrid.js";
 import Testimonial from "./components/testimonials/ThreeColumnWithProfileImage.js";
 import Footer from "./components/footers/FiveColumnWithInputForm.js";
@@ -20,11 +20,11 @@ import TeaPartyIcon from "images/icon/misc/tea-party.svg";
 /** Setup Background */
 import imgAbout from "images/_dummy/square/square_about_home.png";
 export default () => {
-  const HighlightedText = tw.span`text-primary-500 inline-block`;
+  const HighlightedText = tw.span`text-primary-500 inline-block font-normal`;
   const imageCss = tw`hidden md:inline-block md:w-100 md:h-100  md:opacity-100 opacity-75`;
 
   return (
-    <AnimationRevealPage>
+    <AnimationRevealPage direction="left">
       <Hero
         heading={
           <>
@@ -74,7 +74,7 @@ export default () => {
         imageCss={tw`w-20! h-20! `}
       />
 
-      <MainFeature2
+      <FeaturesStep
         subheading={<>Alur Persiapan</>}
         heading={
           <>
@@ -115,9 +115,9 @@ export default () => {
         textOnLeft={true}
       />
 
-      <Features2 heading={<></>} />
+      <FeaturesSlider heading={<></>} />
 
-      <MainFeature
+      <FeaturesAbout
         subheading={<>Didirikan 2022</>}
         heading={
           <>

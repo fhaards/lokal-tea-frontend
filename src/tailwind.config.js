@@ -278,6 +278,8 @@ module.exports = {
       display: ["Inter", "system-ui"],
       dmsans: ["DM Sans", "sans-serif"],
       dmdisplay: ["DM Serif Display", "serif"],
+      montser: ["Montserrat", "sans-serif"],
+      montseralt: ["Montserrat Alternates", "sans-serif"],
       libre: ["Libre Baskerville", "serif"],
       quicksand: ["Quicksand", "sans-serif"],
       sans: [
