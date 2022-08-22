@@ -3,14 +3,14 @@ import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage";
 
-import Hero from "./components/hero/HeroTwoColBackground";
-import Features from "./components/features/ThreeColSimple2";
-import FeaturesStep from "./components/features/SingleColWithSteps";
-import FeaturesSlider from "./components/hero/SliderPromotion";
-import FeaturesAbout from "./components/features/TwoColSimple";
-import ProductGrid from "./components/cards/products/ProductGridList";
-import Testimonial from "./components/testimonials/ThreeColumnWithProfileImage";
-import Footer from "./components/footers/FiveColumnWithInputForm";
+import Hero from "components/hero/HeroTwoColBackground";
+import Features from "components/features/ThreeColSimple2";
+import FeaturesStep from "components/features/SingleColWithSteps";
+import FeaturesSlider from "components/hero/SliderPromotion";
+import FeaturesAbout from "components/features/TwoColSimple";
+import ProductGrid from "components/cards/products/ProductGridList";
+import Testimonial from "components/testimonials/ThreeColumnWithProfileImage";
+import Footer from "components/footers/FiveColumnWithInputForm";
 
 import heroImage1 from "images/_dummy/square/tea_display_1.png";
 import TeaCustomIcon from "images/icon/misc/tea-custom.svg";
@@ -147,6 +147,7 @@ export default () => {
       {/* ProductGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the ProductGrid component file to see the structure of the tabs props.*/}
 
       <ProductGrid
+        subheading={<>Menu</>}
         heading={
           <>
             Teh <HighlightedText> Lokal</HighlightedText>

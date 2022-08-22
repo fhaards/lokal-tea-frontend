@@ -10,7 +10,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
  */
 
 // import ComponentRenderer from "ComponentRenderer.js";
-import MainLanding from "MainLanding";
+import Homepage from "pages/Homepage";
 // import ThankYouPage from "ThankYouPage.js";
 import AboutUsPage from "pages/AboutUs";
 import ContactUsPage from "pages/ContactUs";
@@ -43,7 +43,7 @@ export default function App() {
           <MenuListPage />
         </Route>
         <Route path="/">
-          <MainLanding />
+          <Homepage />
         </Route>
       </Switch>
     </Router>

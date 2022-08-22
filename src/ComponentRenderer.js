@@ -49,7 +49,7 @@ import ThreePlansWithHalfPrimaryBackgroundPricing from "components/pricing/Three
 import ThreePlansPricing from "components/pricing/ThreePlans.js";
 
 import ThreeColWithSideImageFeatures from "components/features/ThreeColWithSideImage.js";
-import TwoColWithButtonFeatures from "components/features/TwoColWithButton.js";
+import TwoColWithButtonFeatures from "components/features/TwoColSimple.js";
 import ThreeColSimpleFeatures from "components/features/ThreeColSimple.js";
 import ThreeColWithSideImageWithPrimaryBackgroundFeatures from "components/features/ThreeColWithSideImageWithPrimaryBackground.js";
 import TwoColVerticalWithButtonFeatures from "components/features/TwoColWithTwoFeaturesAndButtons.js";

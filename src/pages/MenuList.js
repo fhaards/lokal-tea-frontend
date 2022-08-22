@@ -4,12 +4,12 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro";
 import Header from "components/headers/Navbar";
-import TabGrid from "components/cards/TabCardGrid.js";
+import TabGrid from "components/cards/products/ProductGridList";
 import Footer from "components/footers/FiveColumnWithInputForm.js";
 
 const HighlightedText = tw.span`text-primary-500 inline-block`;
 const Container = styled.div`
-  ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
+  ${tw`relative bg-center bg-cover`}
 `;
 
 const Content = styled.div`
@@ -19,8 +19,8 @@ const Content = styled.div`
 export default () => {
   return (
     <AnimationRevealPage>
+      <Header />
       <Container>
-        <Header />
         <Content>
           <TabGrid
             heading={

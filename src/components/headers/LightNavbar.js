@@ -50,8 +50,6 @@ export const DesktopNavLinks = tw.nav`
 
 export default ({
   roundedHeaderButton = false,
-  isScroll,
-  logoLink,
   links,
   className,
   collapseBreakpointClass = "lg",
@@ -85,7 +83,7 @@ export default ({
     <Header className={className || "header-light"}>
       <DesktopNavLinks css={collapseBreakpointCss.desktopNavLinks}>
         <LogoLink href="/">
-          <img src={isScroll ? logoLight : logoDark} alt="logo" height="200" />
+          <img src={logoDark} alt="logo" height="200" />
         </LogoLink>
         {links}
       </DesktopNavLinks>
@@ -94,7 +92,7 @@ export default ({
         css={collapseBreakpointCss.mobileNavLinksContainer}
       >
         <LogoLink href="/">
-          <img src={isScroll ? logoLight : logoDark} alt="logo" height="200" />
+          <img src={logoDark} alt="logo" height="200" />
         </LogoLink>
         <MobileNavLinks
           initial={{ x: "150%", display: "none" }}

@@ -16,27 +16,21 @@ import { ReactComponent as SvgDotPattern } from "images/other/svg-decorator-blob
 import AnimationReveal from "helpers/AnimationRevealPage.js";
 
 const Container = styled.div`
-  ${tw`relative -mx-8 -mt-8 bg-center bg-cover h-144 md:h-screen items-center bg-primary-100 rounded-b-6xl md:rounded-b-none md:rounded-br-full md:rounded-bl-3xl`}
+  ${tw`relative  bg-center bg-cover h-screen md:h-screen items-center bg-primary-100 rounded-b-6xl md:rounded-b-none md:rounded-b-none`}
 `;
 
-const HeroContainer = tw.div`flex flex-col md:flex-row max-w-screen-xl mx-auto justify-center items-center `;
-const Content = tw.div`z-20 px-10 lg:px-0 flex flex-col lg:flex-row justify-center items-center md:w-full`;
+const HeroContainer = tw.div`flex flex-col md:flex-row max-w-screen-xl mx-auto justify-center items-center`;
+const Content = tw.div`z-20 px-4 lg:px-0 flex flex-col md:flex-row justify-center items-center md:w-full`;
 const OpacityOverlay = tw.div`z-10 absolute inset-0 opacity-0 bg-primary-400 rounded-md`;
-const HeroImageBackground = styled.div`
-  ${tw`z-0 absolute inset-0 h-144 md:h-screen object-cover w-full flex justify-end items-end`}
-`;
-const HeroImageSet = styled.img`
-  ${tw`w-full h-full object-cover`}
-`;
 
 const TextColumn = styled(Content)((props) => [
-  tw`md:w-6/12 mt-56 md:mt-0 flex flex-col z-10`,
+  tw`lg:w-6/12 mt-24 sm:mt-24 md:mt-0 lg:mt-0 flex flex-col z-10 lg:px-0`,
   props.textOnLeft
     ? tw`md:mr-10 lg:mr-12 md:order-first`
     : tw`md:ml-10 lg:ml-12 md:order-last`,
 ]);
 const Heading = styled.h1`
-  ${tw`font-montseralt text-4xl sm:text-4xl lg:text-5xl xl:text-6xl normal-case text-primary-500 leading-none -mt-24 sm:mt-0 max-w-2xl`}
+  ${tw`font-montseralt text-4xl sm:text-3xl md:text-6xl lg:text-6xl xl:text-6xl normal-case text-primary-500 leading-none max-w-2xl`}
   span {
     ${tw`inline-block mt-2 text-gray-900`}
   }
@@ -53,7 +47,7 @@ const Description = tw(
 
 const ImageColumn = tw(
   Content
-)`md:w-6/12 flex-shrink-0 md:relative absolute -z-10`;
+)`w-10/12 md:w-6/12 lg:w-6/12 flex-shrink-0 md:relative absolute -z-10`;
 const Image = styled.img((props) => [
   props.imageRounded && tw`rounded-lg`,
   props.imageBorder && tw`border`,
@@ -88,7 +82,7 @@ export default ({
 
   /** Styling Headers */
   const StyledHeader = styled(Header)`
-    ${tw`z-30 w-full max-w-screen-xl flex items-center h-full mx-auto px-6 sm:px-0`}
+    ${tw`z-30 w-full max-w-screen-xl flex items-center h-full mx-auto px-6 lg:px-0`}
     ${DesktopNavLinks} ${NavLink} {
       ${isScroll
         ? tw`text-gray-900 hover:text-primary-500`
@@ -124,7 +118,7 @@ export default ({
 
         <Content>
           <TextColumn textOnLeft={textOnLeft}>
-            <AnimationReveal direction="right">
+            <AnimationReveal>
               <Heading>{heading}</Heading>
               <SubHeading>{subHeading}</SubHeading>
               <Description>{description}</Description>
@@ -132,13 +126,15 @@ export default ({
           </TextColumn>
 
           <ImageColumn>
-            <Image
-              css={imageCss}
-              src={heroImage}
-              imageBorder={imageBorder}
-              imageShadow={imageShadow}
-              imageRounded={imageRounded}
-            />
+            <AnimationReveal direction="left">
+              <Image
+                css={imageCss}
+                src={heroImage}
+                imageBorder={imageBorder}
+                imageShadow={imageShadow}
+                imageRounded={imageRounded}
+              />
+            </AnimationReveal>
           </ImageColumn>
         </Content>
 

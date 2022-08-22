@@ -1,9 +1,9 @@
 import React from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import tw from "twin.macro";
-import Hero from "components/hero/SingleColumnSimple";
+import Hero from "components/hero/HeroSingleCol";
 import Footer from "components/footers/FiveColumnWithInputForm.js";
-import MainFeature1 from "components/features/TwoColWithButton.js";
+import MainFeature1 from "components/features/TwoColSimple";
 import Features from "components/features/ThreeColSimple2.js";
 
 import imageSrc from "images/_dummy/background/bg_hero_2.jpg";
@@ -19,7 +19,7 @@ const imageCss = tw``;
 
 export default () => {
   return (
-    <AnimationRevealPage>
+    <AnimationRevealPage disabled>
       <Hero
         heading={
           <>
