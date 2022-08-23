@@ -19,7 +19,7 @@ const imageCss = tw``;
 
 export default () => {
   return (
-    <AnimationRevealPage disabled>
+    <AnimationRevealPage>
       <Hero
         heading={
           <>

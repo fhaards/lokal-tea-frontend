@@ -6,7 +6,7 @@ import tw from "twin.macro";
 import { motion } from "framer-motion";
 import useInView from "@owaiswiz/use-in-view";
 
-const StyledDiv = tw.div`overflow-hidden`;
+const StyledDiv = tw.div`overflow-hidden `;
 function AnimationReveal({ disabled, children }) {
   if (disabled) {
     return <>{children}</>;

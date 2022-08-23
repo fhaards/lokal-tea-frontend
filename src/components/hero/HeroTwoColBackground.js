@@ -16,7 +16,7 @@ import { ReactComponent as SvgDotPattern } from "images/other/svg-decorator-blob
 import AnimationReveal from "helpers/AnimationRevealPage.js";
 
 const Container = styled.div`
-  ${tw`relative  bg-center bg-cover h-screen md:h-screen items-center bg-primary-100 rounded-b-6xl md:rounded-b-none md:rounded-b-none`}
+  ${tw`relative bg-center bg-cover h-screen md:h-screen items-center bg-primary-100 rounded-b-6xl md:rounded-b-none md:rounded-b-none`}
 `;
 
 const HeroContainer = tw.div`flex flex-col md:flex-row max-w-screen-xl mx-auto justify-center items-center`;

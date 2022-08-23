@@ -17,7 +17,7 @@ const HighlightedText = tw.span`text-primary-500 inline-block font-light`;
 const DescriptionText = tw.span`text-gray-600 text-right`;
 const imageCss = tw`rounded-tl-full rounded-br-full bg-red-500`;
 const Container = styled.div`
-  ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
+  ${tw`relative bg-center bg-cover`}
 `;
 
 export default () => {

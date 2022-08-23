@@ -1,6 +1,7 @@
 import "tailwindcss/dist/base.css";
 import "styles/globalStyles.css";
 import React from "react";
+import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
 /*
@@ -20,11 +21,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
   // return <AnimationRevealPage disabled>xxxxxxxxxx</AnimationRevealPage>;
-
+  const Section = tw.div`overflow-hidden relative`;
   return (
-    <Router>
-      <Switch>
-        {/* <Route path="/components/:type/:subtype/:name">
+    <Section>
+      <Router>
+        <Switch>
+          {/* <Route path="/components/:type/:subtype/:name">
           <ComponentRenderer />
         </Route>
         <Route path="/components/:type/:name">
@@ -33,19 +35,20 @@ export default function App() {
         <Route path="/thank-you">
           <ThankYouPage />
         </Route> */}
-        <Route path="/contact-us">
-          <ContactUsPage />
-        </Route>
-        <Route path="/about-us">
-          <AboutUsPage />
-        </Route>
-        <Route path="/menu-list">
-          <MenuListPage />
-        </Route>
-        <Route path="/">
-          <Homepage />
-        </Route>
-      </Switch>
-    </Router>
+          <Route path="/contact-us">
+            <ContactUsPage />
+          </Route>
+          <Route path="/about-us">
+            <AboutUsPage />
+          </Route>
+          <Route path="/menu-list">
+            <MenuListPage />
+          </Route>
+          <Route path="/">
+            <Homepage />
+          </Route>
+        </Switch>
+      </Router>
+    </Section>
   );
 }
